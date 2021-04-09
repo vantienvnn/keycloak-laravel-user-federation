@@ -41,6 +41,8 @@ dependencies {
     // https://mvnrepository.com/artifact/mysql/mysql-connector-java
     compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.20'
 
+    compile group: 'org.mindrot', name: 'jbcrypt', version: '0.4'
+
     // This dependency is exported to consumers, that is to say found on their compile classpath.
     // api 'org.apache.commons:commons-math3:3.6.1'
 

@@ -1,16 +1,19 @@
-# keycloak-mysql-user-federation
+# keycloak-laravel-user-federation
 
-[Keycloak](https://www.keycloak.org/) user federation extension to connect to a MySQL database containing users. For creating it I followed [this guide](https://www.keycloak.org/docs/latest/server_development/index.html#_user-storage-spi) from the official documentation.
+[Keycloak](https://www.keycloak.org/) user federation extension to connect to a MySQL database containing users (password is hashing by laravel). For creating it I followed [this guide](https://www.keycloak.org/docs/latest/server_development/index.html#_user-storage-spi) from the official documentation.
 
 ## Installation
 
-Clone the repository:
+[Download Jar file here] (https://github.com/vantienvnn/keycloak-laravel-user-federation/tree/master/resources/)
 
-`git clone https://github.com/kyrcha/keycloak-mysql-user-federation.git`
+
+or Clone the repository:
+
+`git clone https://github.com/vantienvnn/keycloak-laravel-user-federation.git`
 
 Build the fat jar:
-
-`gradle shadowJar`
+`chmod +x ./gradlew`
+`./gradlew shadowJar`
 
 Instruction for installing gradle build system can be found in the [official docs](https://gradle.org/).
 
@@ -38,7 +41,7 @@ Add the following properties:
 - The table containing the users
 - The column with the username
 - The column with the password
-- The hash algorithms: MD5 or SHA1
+- The hash algorithms: Bcrypt - for laravel hash pasword, or MD5 or SHA1 for other application
 
 ![](docs/installation3.png)
 

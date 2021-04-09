@@ -41,7 +41,7 @@ public class MySQLUserStorageProviderFactory implements UserStorageProviderFacto
     static {
         configMetadata = ProviderConfigurationBuilder.create().property().name("mysql")
                 .type(ProviderConfigProperty.STRING_TYPE).label("MySQL URI")
-                .defaultValue("jdbc:mysql://localhost/db?user=root").helpText("MySQL URI").add().property()
+                .defaultValue("jdbc:mysql://localhost/db?user=mysqluser&password=mysqlpassword").helpText("MySQL URI").add().property()
                 .name("table").type(ProviderConfigProperty.STRING_TYPE).label("Users Table").defaultValue("users")
                 .helpText("Table where users are stored").add().property().name("usernamecol")
                 .type(ProviderConfigProperty.STRING_TYPE).label("Username Column").defaultValue("username")
@@ -49,7 +49,7 @@ public class MySQLUserStorageProviderFactory implements UserStorageProviderFacto
                 .type(ProviderConfigProperty.STRING_TYPE).label("Password Column").defaultValue("password")
                 .helpText("Column name that holds the passwords").add().property().name("hash")
                 .type(ProviderConfigProperty.LIST_TYPE).label("Hash Algorithm").defaultValue("SHA1")
-                .options(Arrays.asList("SHA1", "MD5")).helpText("Algorithm used for hashing").add().build();
+                .options(Arrays.asList("SHA1", "MD5", "BCrypt")).helpText("Algorithm used for hashing").add().build();
     }
 
     @Override
